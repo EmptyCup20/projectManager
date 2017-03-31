@@ -1,0 +1,61 @@
+<% include ../common/index.ejs %>
+    <div class="page animsition">
+        <div class="page-header">
+            <h1 class="page-title">作品管理</h1>
+        </div>
+
+        <div class="page-content" id="workList">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">作品池列表</h3>
+                </div>
+                <div class="panel-body container-fluid">
+                    <div id="toolbar">
+                        <a href="javascript:void(0);" id="addProject" class="btn btn-primary" data-toggle="modal" data-target="#addProjectModal">
+                            <i class="glyphicon glyphicon-plus"></i> 新增项目
+                        </a>
+                    </div>
+                    <table id="table" data-toolbar="#toolbar" data-search="true"></table>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">新增项目</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="projectName" class="col-sm-3 control-label">项目名称</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="projectName" placeholder="项目名称">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectDecUrl" class="col-sm-3 control-label">项目描述文件地址</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="projectDecUrl" placeholder="项目描述文件地址">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectDecUrl" class="col-sm-3 control-label">项目文件</label>
+                                <div class="col-sm-9">
+                                    <input type="file" class="form-control" name="file" id="projectUploader">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" id="saveProject">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/javascripts/project/projectList.js"></script>
+    <% include ../common/foot.ejs %>
