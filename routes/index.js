@@ -88,6 +88,19 @@ router.get('/api/delProject', (req, res) => {
 });
 
 router.post('/api/score', (req, res) => {
+    db_tools.queryByCondition('project',{_id: req.body.projectId}).then((data)=>{
+        data = data[0].toObject();
+        data.score.forEach((n)=>{
+            if(n.username === req.body.username){
+                res.send({
+                    success: false,
+                    data: null,
+                    message: '请勿重复打分'
+                });
+                return;
+            }
+        });
+    });
     db_tools.pushSubDoc('project', {_id: req.body.projectId}, {score:{score: req.body.score,username:req.body.username}}).then(() => {
         res.send({
             success: true,
@@ -146,4 +159,5 @@ router.post('/api/login', (req, res)=> {
         })
     })
 });
+
 module.exports = router;
