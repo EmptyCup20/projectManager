@@ -2,9 +2,6 @@ $(function () {
 
     var ProjectList = function () {
         this.user = document.cookie.split('=')[1];
-        if(!this.user){
-            window.location.href = '/';
-        }
         this.$table = $('#table');
         this.$saveProject = $('#saveProject');
         this.$projectName = $('#projectName');

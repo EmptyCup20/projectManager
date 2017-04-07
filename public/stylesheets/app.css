@@ -253,11 +253,11 @@ th {
     border: 1px solid #ddd !important;
   }
 }
-@font-face {
+/*@font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
+}*/
 .glyphicon {
   position: relative;
   top: 1px;
@@ -18319,10 +18319,10 @@ body.md-nooverflow {
     width: 100%;
 }
 
-@font-face {
+/*@font-face {
     font-family: 'opensans';
     src: url("../../fonts/opensans.ttf");
-}
+}*/
 
 .form-control {
     border: 1px solid #e4eaec;

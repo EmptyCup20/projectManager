@@ -4,11 +4,10 @@ var db_tools = require('../mongo/db_tools');
 var upload = require('./uploader');
 /* GET home page. */
 router.get('/', (req, res) => {
-    res.render('login');
-});
-
-router.get('/projectList', (req, res) => {
-    res.render('project/projectList');
+    req.session.cas && req.session.cas.user && res.cookie('username',req.session.cas.user);
+    res.render('project/projectList',{
+        username: req.session.cas && req.session.cas.user ? req.session.cas.user : ''
+    });
 });
 
 /**
